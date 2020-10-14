@@ -1,0 +1,44 @@
+<!-- <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>Imagen</th>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Precio</th>
+      <th>Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img [src]="phone.image" [alt]="phone.model" class="product-img"></td>
+      <td>{{phone.brand}}</td>
+      <td>{{phone.model}}</td>
+      <td>{{phone.price}}</td>
+      <td>{{phone.stock}}</td>
+    </tr>
+    <tr>
+      <td>Samsung</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Motorola</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table> -->
+<div class="media">
+  <img [src]="phone.image" [alt]="phone.model" class="product-img">
+  <div class="media-body">
+    <ul>
+      <li>Marca: {{phone.brand}}</li>
+      <li>Modelo: {{phone.model}}</li>
+      <li>$ {{phone.price}}</li>
+      <li>Stock: {{phone.stock}}</li>
+      <li>Smartphone Android con pantalla HD+ de 5.45 pulgadas, procesador Helio P22 de ocho núcleos, 3GB de RAM y 32GB de almacenamiento o 4GB de RAM y 64GB de almacenamiento, cámara dual de 12 MP + 5 MP, lector de huellas y batería de 3000 mAh.</li>
+    </ul>
+  </div>
+</div>

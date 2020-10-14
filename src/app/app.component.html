@@ -1,4 +1,41 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<!-- Se suele usar como "esqueleto principal del sitio" o la estructura principal -->
+<header>
+  <img class="imgMenu"src="../imagenes/menu.png" alt="">
+  <h1>{{title}}</h1>
+  <!-- <img src="../imagenes/logo/1.2.png" alt="logo" class="logo"> -->
+</header>
+
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Inicio</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Contacto</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Algo mas</a>
+  </li>
+</ul>
+
+<hr>
+
+<div class="container"><!-- contenedor usado para estructurar la pagina -->
+  <div class="row">
+    <div class="col-8">
+      <app-product-list></app-product-list>
+    </div>
+    <div class="col-4">Carrito de compras</div>
+  </div>
+</div>
+
+<footer>
+  <a class="social" href="https://www.instagram.com/" target="_blank">
+      <img class="logoRedes" src="../imagenes/redes/instagram.png" alt="logo de instagram">
+  </a>
+  <a class="social" href="https://www.facebook.com/" target="_blank">
+      <img class="logoRedes" src="../imagenes/redes/facebook.png" alt="logo de facebook">
+  </a>
+  <a class="social" href="https://www.twitter.com" target="_blank">
+      <img class="logoRedes" src="../imagenes/redes/twitter.png" alt="logo de twitter">
+  </a>
+</footer>
