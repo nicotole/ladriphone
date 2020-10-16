@@ -30,15 +30,17 @@
     </tr>
   </tbody>
 </table> -->
-<div class="media">
+<!-- en el template va logica de muestreo y en el .ts va la logica de la app un poquito mas de fondo -->
+<div class="media" *ngFor="let phone of phones" [ngClass]="{'clearance': phone.clearance}"> <!--Es una directiva-- for de angular-->
   <img [src]="phone.image" [alt]="phone.model" class="product-img">
   <div class="media-body">
     <ul>
-      <li>Marca: {{phone.brand}}</li>
+      <li>Marca: {{phone.brand | uppercase}}</li><!--este pipe te hace Uppercase. se pueden concatenar poniendo otro "|"-->
       <li>Modelo: {{phone.model}}</li>
-      <li>$ {{phone.price}}</li>
-      <li>Stock: {{phone.stock}}</li>
-      <li>Smartphone Android con pantalla HD+ de 5.45 pulgadas, procesador Helio P22 de ocho núcleos, 3GB de RAM y 32GB de almacenamiento o 4GB de RAM y 64GB de almacenamiento, cámara dual de 12 MP + 5 MP, lector de huellas y batería de 3000 mAh.</li>
+      <li>{{phone.price | currency}}</li><!-- es un pipe que transforma el valor y lo escribe como precio con simbolo y decimales-->
+      <li>{{phone.description}}</li>
+      <li *ngIf="phone.stock == 0"><span class="badge badge-pill badge-danger">SIN STOCK</span></li>
+      <li *ngIf="phone.stock > 0"><span class="badge badge-pill badge-success">EN STOCK</span></li>
     </ul>
   </div>
 </div>
