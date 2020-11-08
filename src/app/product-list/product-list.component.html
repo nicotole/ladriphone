@@ -1,46 +1,21 @@
-<!-- <table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th>Imagen</th>
-      <th>Marca</th>
-      <th>Modelo</th>
-      <th>Precio</th>
-      <th>Stock</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><img [src]="phone.image" [alt]="phone.model" class="product-img"></td>
-      <td>{{phone.brand}}</td>
-      <td>{{phone.model}}</td>
-      <td>{{phone.price}}</td>
-      <td>{{phone.stock}}</td>
-    </tr>
-    <tr>
-      <td>Samsung</td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Motorola</td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table> -->
 <!-- en el template va logica de muestreo y en el .ts va la logica de la app un poquito mas de fondo -->
 <div class="media" *ngFor="let phone of phones" [ngClass]="{'clearance': phone.clearance}"> <!--Es una directiva-- for de angular-->
   <img [src]="phone.image" [alt]="phone.model" class="product-img">
-  <div class="media-body">
+  <div class="media-body text-justify"><!--para que el texto se vea como en un libro-->
     <ul>
       <li>Marca: {{phone.brand | uppercase}}</li><!--este pipe te hace Uppercase. se pueden concatenar poniendo otro "|"-->
       <li>Modelo: {{phone.model}}</li>
       <li>{{phone.price | currency}}</li><!-- es un pipe que transforma el valor y lo escribe como precio con simbolo y decimales-->
       <li>{{phone.description}}</li>
       <li *ngIf="phone.stock == 0"><span class="badge badge-pill badge-danger">SIN STOCK</span></li>
-      <li *ngIf="phone.stock > 0"><span class="badge badge-pill badge-success">EN STOCK</span></li>
+      <li *ngIf="phone.stock > 0"><span class="badge badge-pill badge-success">EN STOCK {{phone.stock}} UNIDADES</span></li>
+      <li *ngIf="phone.stock > 0">
+        <app-input-integer [(quantity)]="phone.quantity" [max]="phone.stock" (maxReached)="maxReached($event)"></app-input-integer>
+        <!--en la linea anterior phone.quantity esta definido para que da tada entre y salga, entonces se mantiene sincronizado-->
+        <!-- cant: {{phone.quantity}} -->
+        <button class="btn btn-success" (click)="addToCart(phone)">Añadir!</button>
+      </li>
     </ul>
+    <!-- [(ngModel)]="phone.quantity" -->
   </div>
 </div>

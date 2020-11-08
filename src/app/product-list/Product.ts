@@ -6,6 +6,7 @@ export interface Product{
   image: string;
   description: string;
   clearance: boolean;
+  quantity: number;
 }
 // phone = {
 //   'brand':'Xiaomi',

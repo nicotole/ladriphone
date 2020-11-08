@@ -1,0 +1,8 @@
+
+<div class="input-group"><!--Asi se quedan bien alineados-->
+  <button class="btn btn-primary btn-sm" (click)="downQuantity()">-</button>
+  <!--<input type="text" [(ngModel)]="phone.quantity">--><!--[value]="phone.quantity" pone el valor de lo que lee del objeto en typscript. es el valor que contiene la instancia de phone en ese instante-->
+  <input type="text" [(ngModel)]="quantity" (keyup)="changeCuantity($event)"> <!--[(ngModel)]="phone.quantity" sincroniza lo mostrado en el dom con la instancia de phone usando su phone.quantity-->
+  <!-- {{phone.quantity}} -->
+  <button class="btn btn-primary btn-sm" (click)="upQuantity()">+</button>
+</div>

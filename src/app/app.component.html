@@ -7,26 +7,24 @@
 
 <ul class="nav justify-content-center">
   <li class="nav-item">
-    <a class="nav-link active" href="#">Inicio</a>
+    <a class="nav-link active" [routerLink]="['/']">Inicio</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Contacto</a>
+    <a class="nav-link" [routerLink]="['/about']">Contacto</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Algo mas</a>
+    <a class="nav-link">Algo mas</a>
   </li>
 </ul>
 
 <hr>
 
 <div class="container"><!-- contenedor usado para estructurar la pagina -->
-  <div class="row">
-    <div class="col-8">
-      <app-product-list></app-product-list>
-    </div>
-    <div class="col-4">Carrito de compras</div>
-  </div>
+  <!-- <app-ladriphone-products></app-ladriphone-products> -->
+  <router-outlet></router-outlet><!--Aca se carga lo que se rutea en el routing module es un contenedor donde se cargan los componentes que queremos mostrar segun la pagina-->
 </div>
+
+<hr>
 
 <footer>
   <a class="social" href="https://www.instagram.com/" target="_blank">

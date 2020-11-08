@@ -1,0 +1,15 @@
+<p>Carrito de compras</p>
+<!-- <ul>
+  <li *ngFor="let phone of (cartList$ | async)">
+    {{phone.model}} : {{phone.quantity}}
+  </li>
+</ul> -->
+<div class="media cart-card " *ngFor="let phone of (cartList$ | async)">
+  <img [src]="phone.image" class="mr-3 product-image" [alt]="phone.model">
+  <div class="media-body">
+    <h5 class="mt-0">{{phone.model}}</h5>
+    <p>Cantidad: <span class="badge badge-secondary">{{phone.quantity}}</span></p>
+    <p>Total: <span class="badge badge-secondary">{{phone.price | currency}}</span></p>
+  </div>
+</div>
+
